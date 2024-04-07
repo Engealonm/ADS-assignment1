@@ -1,0 +1,198 @@
+
+#include <iostream>
+using namespace std;
+
+
+
+//comlexity O(N)
+
+int minimum(int arr[100], int n) {
+
+	int mini = arr[0];
+	for (int i = 1; i < n; i++) {
+		if (mini > arr[i]) {
+			mini = arr[i];
+		}
+
+	}
+	return mini;
+
+}
+void task1() {
+
+	int n;
+	cin >> n;
+	int arr[100];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	cout << minimum(arr, n);
+}
+// complexity: O(n)
+float average(int arr[100], float n) {
+	float sum = 0;
+
+	for (int i = 0; i < n; i++) {
+		sum += arr[i];
+	}
+	return sum / n;
+}
+void task2() {
+	int n;
+	cin >> n;
+	int arr[100];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	cout << average(arr, n);
+
+}
+// complexity: O(n/2)
+string isprime(int n) {
+	for (int i = 2; i <= n / 2; i++)
+		if (n % i == 0) {
+			return "NO";
+		}
+	return "YES";
+}
+
+void task3() {
+	int n;
+	cin >> n;
+	cout << isprime(n);
+}
+// complexity: O(n)
+int factorial(int n) {
+	if (n <= 2) {
+		return n;
+	}
+	else {
+		return factorial(n - 1) * n;
+	}
+}
+
+void task4() {
+	int n;
+	cin >> n;
+	cout << factorial(n);
+}
+// complexity: O(n)
+int fibonacci(int n) {
+	if (n <= 1)
+		return n;
+	else {
+		return fibonacci(n - 1) + fibonacci(n - 2);
+	}
+
+}
+
+void task5() {
+	int n;
+	cin >> n;
+	cout << fibonacci(n);
+}
+// complexity: O(n)
+int power(int a, int n) {
+	int sum = 1;
+	if (n == 0) {
+		return 1;
+	}
+	else
+		for (int i = 0; i < n; i++) {
+			sum *= a;
+		}
+	return sum;
+}
+
+void task6() {
+	int a, n;
+	cin >> a >> n;
+	cout << power(a, n);
+}
+
+
+string allvariants(string s) {
+
+
+	return "yes";
+
+}
+void solve(string& s)
+{
+	
+
+
+}
+
+void task7() {
+	string s;
+	cin >> s;
+	cout << allvariants(s);
+}
+// complexity: O(n)
+bool isdigits(string s) {
+	bool a = 1;
+	for (int i = 0; i < s.size(); i++) {
+		if ('0' > s[i] || s[i] < '9') {
+			a = 0;
+		}
+		else {
+			a = 1;
+			break;
+		}
+	}
+
+	return a;
+
+}
+
+void task8() {
+	string s;
+	cin >> s;
+	if (isdigits(s)) {
+		cout << "NO";
+	}
+	else {
+		cout << "YES";
+	}
+}
+
+// complexity: O(n*max(k,n-k))
+int biocoef(int n, int k) {
+
+	if (n == k or k == 0) {
+		return 1;
+	}
+	return biocoef(n - 1, k - 1) + biocoef(n - 1, k);
+
+}
+
+void task9() {
+	int n, k;
+	cin >> n >> k;
+	cout << biocoef(n, k);
+}
+// complexity: O(log min(a, b))
+int GCD(int a, int b) {
+	if (b == 0) {
+		return a;
+	}
+	else {
+		GCD(a, a % b);
+	}
+
+
+}
+void task10() {
+	int a, b;
+	cin >> a >> b;
+	cout << GCD(a, b);
+}
+
+int main() {
+
+	task10();
+
+	return 0;
+
+}
